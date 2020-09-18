@@ -18,12 +18,6 @@ function quit()
 }
 trap quit SIGINT
 
-if [ $UID -ne 0 ]; then
-
-	echo -e "$RED You need to be root to run Script"
-	exit 1
-fi
-
 clear
 echo -e "\n\n"
 echo -e "$LCYAN \t\t\tGit Installation and Configuration Script"
@@ -36,7 +30,7 @@ if dpkg -s git &>/dev/null; then
 else
 	echo -e "$YELLOW Installing...:)"
 	sleep 2
-	apt-get -qq install git
+	sudo apt-get -qq install git
 
 	echo -e "$LGRAY Installation complete...:)"
 
