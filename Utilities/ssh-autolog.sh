@@ -15,7 +15,7 @@ function autolog(){
 
 	ssh-keygen -t rsa -b 4096 -N "" -f ${remotehost} &> /dev/null
 
-	echo -e "[+]\tKey generated here `pwd`"
+	echo -e "[+]\tKeys generated here `pwd`"
 	ls -l | grep ${remotehost}
 	echo -e "[+]\tCopying public key to ${remotehost}"
 	ssh-copy-id -i ${remotehost}.pub ${user}@${remotehost}
