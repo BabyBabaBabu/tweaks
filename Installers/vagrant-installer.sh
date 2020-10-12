@@ -47,6 +47,9 @@ function getVagrant(){
     
     if $? -eq 0;then
         sudo rm /tmp/vagrant-update.deb
+        # Enable Autocompletion
+        echo -e "[+]\tEnabling autocompletion"
+        vagrant autocomplete install --bash --zsh
         sleep 2
         echo -e "[+]\tInstallation complete!"
     fi
