@@ -15,18 +15,18 @@ echo -e "[+] Installing..."
 cd /tmp
 tar -C /usr/local -xzf $UPDATE_VERSION.tar.gz
 cd $HOME
+
+# Setting up enviroment variables
 if $SHELL == /bin/bash;then
-echo "export PATH=$PATH:/usr/local/go/bin" >> $HOME/.bashrc
-echo "export GOROOT=/usr/local/go" >> $HOME/.bashrc
-echo "export GOPATH=$HOME/go-projects" >> $HOME/.bashrc
-source $HOME/.bashrc
-
-else if $SHELL == /bin/zsh;then
-echo "export PATH=$PATH:/usr/local/go/bin" >> $HOME/.zshrc
-echo "export GOROOT=/usr/local/go" >> $HOME/.zshrc
-echo "export GOPATH=$HOME/go-projects" >> $HOME/.zshrc
-source $HOME/.zshrc
-
+    echo "export PATH=$PATH:/usr/local/go/bin" >> $HOME/.bashrc
+    echo "export GOROOT=/usr/local/go" >> $HOME/.bashrc
+    echo "export GOPATH=$HOME/go-projects" >> $HOME/.bashrc
+    source $HOME/.bashrc
+elif $SHELL == /bin/zsh;then
+    echo "export PATH=$PATH:/usr/local/go/bin" >> $HOME/.zshrc
+    echo "export GOROOT=/usr/local/go" >> $HOME/.zshrc
+    echo "export GOPATH=$HOME/go-projects" >> $HOME/.zshrc
+    source $HOME/.zshrc
 fi
 
 echo -e "[+] Installation complete!"
