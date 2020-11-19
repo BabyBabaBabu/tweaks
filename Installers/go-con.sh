@@ -6,3 +6,4 @@ PROJECT=$1
 DIR=`go env GOPATH | awk -FS":" '{print $1}'`
 # create new workspace for project
 mkdir -p $DIR/src/github.com/BabyBabaBabu/$PROJECT
+echo -e "[+] Done, Happy Hacking!!"
