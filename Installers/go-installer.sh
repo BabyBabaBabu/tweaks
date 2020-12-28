@@ -20,17 +20,24 @@ cd $HOME
 # Setting up enviroment variables
 if [ $SHELL == "/bin/bash" ];then
     # echo "using bash"
-    echo "export PATH=$PATH:/usr/local/go/bin" >> $HOME/.bashrc
     echo "export GOROOT=/usr/local/go" >> $HOME/.bashrc
+    echo "export PATH=$PATH:$GOROOT/bin" >> $HOME/.bashrc
+    mkdir -p $HOME/golib
+    echo "export GOPATH=$HOME/golib" >> $HOME/.bashrc
+    echo "PATH=$PATH:$GOPATH/bin">> $HOME/.bashrc
     mkdir -p $HOME/go-projects
     echo "export GOPATH=$HOME/go-projects" >> $HOME/.bashrc
     source $HOME/.bashrc
 elif [ $SHELL == "/bin/zsh" ];then
     # echo "using zsh"
-    echo "export PATH=$PATH:/usr/local/go/bin" >> $HOME/.zshrc
     echo "export GOROOT=/usr/local/go" >> $HOME/.zshrc
+    echo "export PATH=$PATH:$GOROOT/bin" >> $HOME/.zshrc
+    mkdir -p $HOME/golib
+    echo "export GOPATH=$HOME/golib" >> $HOME/.zshrc
+    echo "PATH=$PATH:$GOPATH/bin" >> $HOME/.zshrc
     mkdir -p $HOME/go-projects
-    echo "export GOPATH=$HOME/go-projects" >> $HOME/.zshrc
+    echo "export GOPATH=$GOPATH:$HOME/go-projects" >> $HOME/.zshrc
+    
     source $HOME/.zshrc
 fi
 
