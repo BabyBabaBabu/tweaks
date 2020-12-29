@@ -22,7 +22,7 @@ if [ $SHELL == "/bin/bash" ];then
     # echo "using bash"
     echo "export GOROOT=/usr/local/go" >> $HOME/.bashrc
     echo "export PATH=$PATH:$GOROOT/bin" >> $HOME/.bashrc
-    mkdir -p $HOME/golib
+    mkdir -p $HOME/golib/bin
     echo "export GOPATH=$HOME/golib" >> $HOME/.bashrc
     echo "export PATH=$PATH:$GOPATH/bin">> $HOME/.bashrc
     mkdir -p $HOME/go-projects
@@ -33,7 +33,7 @@ elif [ $SHELL == "/bin/zsh" ];then
     # echo "using zsh"
     echo "export GOROOT=/usr/local/go" >> $HOME/.zshrc
     echo "export PATH=$PATH:$GOROOT/bin" >> $HOME/.zshrc
-    mkdir -p $HOME/golib
+    mkdir -p $HOME/golib/bin
     echo "export GOPATH=$HOME/golib" >> $HOME/.zshrc
     echo "export PATH=$PATH:$GOPATH/bin" >> $HOME/.zshrc
     mkdir -p $HOME/go-projects
