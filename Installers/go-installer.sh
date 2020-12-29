@@ -27,6 +27,7 @@ if [ $SHELL == "/bin/bash" ];then
     echo "PATH=$PATH:$GOPATH/bin">> $HOME/.bashrc
     mkdir -p $HOME/go-projects
     echo "export GOPATH=$HOME/go-projects" >> $HOME/.bashrc
+    
     source $HOME/.bashrc
 elif [ $SHELL == "/bin/zsh" ];then
     # echo "using zsh"
